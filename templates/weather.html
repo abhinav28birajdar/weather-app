@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather in {{ weather.city }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="{{ url_for('static', filename='images.mp4') }}" type="video/mp4">
+       
+    </video>
+    <div class="container">
+        <h1>Weather in {{ weather.city }}</h1>
+        <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+        <p><strong>Description:</strong> {{ weather.description }}</p>
+        <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+        <a href="/">Search another city</a>
+    </div>
+</body>
+</html>
